@@ -1,0 +1,14 @@
+; This file is for unifying the coding style for different editors and IDEs.
+; More information at http://EditorConfig.org
+
+root = true
+
+[*]
+end_of_line = crlf
+
+# Microsoft .NET properties
+csharp_space_after_cast = true
+
+[*.cs]
+indent_style = space
+indent_size = 4

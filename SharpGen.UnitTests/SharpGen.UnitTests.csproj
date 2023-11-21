@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SharpGen.Platform\SharpGen.Platform.csproj" />
+		<ProjectReference Include="..\SharpGen.Runtime\SharpGen.Runtime.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="xunit" />
+		<PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all" />
+		<PackageReference Include="Xunit.SkippableFact" />
+		<PackageReference Include="FakeItEasy" />
+		<PackageReference Include="FakeItEasy.Analyzer.CSharp" />
+		<PackageReference Include="coverlet.msbuild" />
+	</ItemGroup>
+
+</Project>

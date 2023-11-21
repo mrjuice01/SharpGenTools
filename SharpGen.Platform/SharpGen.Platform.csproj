@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>net472;net7.0</TargetFrameworks>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PolySharpIncludeRuntimeSupportedAttributes>true</PolySharpIncludeRuntimeSupportedAttributes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="PolySharp" />
+		<PackageReference Include="Microsoft.Win32.Registry" Condition="'$(TargetFramework)' != 'net472'" />
+		<PackageReference Include="System.Text.Json" Condition="'$(TargetFramework)' != 'net7.0'" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>SharpGen.UnitTests, PublicKey=$(SharpGenPublicKey)</_Parameter1>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>SharpGenTools.Sdk, PublicKey=$(SharpGenPublicKey)</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SharpGen\SharpGen.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Documentation\DocConverterUtilities.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Documentation\DocItemCache.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Documentation\DocItem.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Documentation\DocItemConverter.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Documentation\DocSubItemConverter.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Documentation\DocSubItem.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="ObservableSet.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
+
+</Project>

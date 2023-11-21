@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<IsPackable>false</IsPackable>
+		<Nullable>enable</Nullable>
+		<IsRoslynComponent>true</IsRoslynComponent>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<DefineConstants>SHARPGEN_ROSLYN</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="PolySharp" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\SharpGen\Generator\StatementSyntaxList.cs">
+			<Link>StatementSyntaxList.cs</Link>
+		</Compile>
+		<Compile Include="..\SharpGen\Generator\SyntaxListBase.cs">
+			<Link>SyntaxListBase.cs</Link>
+		</Compile>
+	</ItemGroup>
+
+</Project>
